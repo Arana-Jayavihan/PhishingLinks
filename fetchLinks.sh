@@ -1,10 +1,10 @@
 #!/bin/bash
-
+. /home/kali/.bashrc
 {
+	cd PhishingLinks/
 	date=$(date)
-	xh -d https://data.phishtank.com/data/online-valid.csv >> phishlinks.csv
-	sleep 3
-	git add phishlinks.csv
-	git commit -m "Update $date"
-	git push
+	/usr/local/bin/xh -d https://data.phishtank.com/data/online-valid.csv -o phishlinks.csv
+	/usr/bin/git add phishlinks.csv
+	/usr/bin/git commit -m "Update $date"
+	/usr/bin/git push
 }
